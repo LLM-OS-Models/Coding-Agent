@@ -10,7 +10,9 @@ Repo-grounded 코딩 에이전트 평가 트랙.
 |--------|------|
 | `file_selection_recall` | gold target_files 중 모델이 올바르게 식별한 비율 |
 | `patch_present` | 모델 출력에 diff/patch 블록이 포함되어 있는지 (0/1) |
-| `test_plan_recall` | gold target_tests 중 모델이 올바르게 제안한 비율 |
+| `test_plan_recall` | gold target_tests 중 모델이 올바르게 제안한 비율 (fuzzy matching) |
+
+Fuzzy matching normalizes path separators and compares word overlap (threshold=0.6)
 
 **성공 조건**: `file_selection_recall > 0 AND test_plan_recall > 0 AND patch_present > 0`
 
